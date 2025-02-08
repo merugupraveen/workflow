@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "cleaned"
-                powershell "mvn clean build"
-                echo "cleaned"
+                echo "cleaned 1"
+                powershell "powershell clean build"
+                echo "cleaned 2"
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
                                         stage("process-${task}") {
                                             steps {
                                             echo "new stage {$task}"
-                                            powershell "mvn clean test -Dsurefire.suiteXmlFiles=${task}"
+                                            powershell "mvn test -Dsurefire.suiteXmlFiles=${task}"
                                             }
                                             }
                                             }
