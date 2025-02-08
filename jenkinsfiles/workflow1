@@ -1,16 +1,31 @@
 pipeline {
     agent any
+    parameters {
+            string(name: 'workflow', defaultValue: '', description: 'workflow')
+        }
     stages {
         stage('Build') {
             steps {
                 echo "cleaned"
-                powershell "mvn clean"
+                powershell "mvn clean build"
                 echo "cleaned"
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Running tests...'
+                def tasks = params.workflow.split('\n')
+                tasks.each { task ->
+                                        // Dynamically create a stage for each task
+                                        stage("process-${task}") {
+                                            steps {
+                                            echo "new stage {$task}"
+                                            powershell "mvn clean test -Dsurefire.suiteXmlFiles=${task}"
+                                            }
+                                            }
+                                            }
+
             }
         }
     }
