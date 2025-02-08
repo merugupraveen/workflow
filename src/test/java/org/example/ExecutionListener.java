@@ -59,7 +59,7 @@ public class ExecutionListener implements IExecutionListener, ISuiteListener, IT
   public void onExecutionFinish() {
     IExecutionListener.super.onExecutionFinish();
     if (Boolean.valueOf(System.getProperty("workflow"))) {
-      WorkFlow workFlow = readWorkFlow("C:\\Users\\Praveen\\IdeaProjects\\github\\workflow\\src\\main\\resources\\workflow.json");
+      WorkFlow workFlow = readWorkFlow("\\src\\main\\resources\\workflow.json");
       Step step = findStep(workFlow,suitName);
       System.out.println(step.getCurrentExecStatus());
       System.out.println(suitName);
