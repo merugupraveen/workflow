@@ -21,7 +21,7 @@ pipeline {
                     // Iterate through tasks and run tests for each task
                     tasks.each { task ->
                         echo "Running task: ${task}"
-                        powershell "mvn test -DsuiteXmlFile='${task}' -Dworkflow=true"
+                        powershell "mvn test -DsuiteXmlFile=${task} -Dworkflow=true"
                     }
                 }
             }
