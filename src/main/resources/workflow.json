@@ -1,0 +1,21 @@
+{
+  "workflow_id": 123,
+  "steps": [
+    {
+      "name": "place_order",
+      "START": true,
+      "prev_exec_result": "TBD",
+      "current_exec_status": "TBD",
+      "exec_date": "TBD",
+      "testdata": {
+        "uid": 123
+      }
+    },
+    {
+      "name": "runbatch",
+      "prev_exec_result": "TBD",
+      "current_exec_status": "TBD",
+      "exec_date": "TBD"
+    }
+  ]
+}

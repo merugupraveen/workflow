@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="runbatch">
+  <test name="WorkflowTest">
+    <classes>
+      <class name="org.example.OrderTests"/>
+    </classes>
+  </test>
+</suite>
