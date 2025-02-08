@@ -16,7 +16,7 @@ pipeline {
             steps {
              script {
                 echo 'Running tests...'
-                def tasks = params.workflow.split('\n')
+                def tasks = params.workflow.split(',')
                 tasks.each { task ->
                                         // Dynamically create a stage for each task
                                         stage("process-${task}") {
