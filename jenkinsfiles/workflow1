@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "cleaned"
-                sh "mvn clean"
+                powershell "mvn clean"
                 echo "cleaned"
             }
         }
